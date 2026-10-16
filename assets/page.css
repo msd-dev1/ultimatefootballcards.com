@@ -1,0 +1,108 @@
+/* The text pages (privacy, support, account deletion): the landing page's night, set for reading. */
+:root {
+  --night: #04070f;
+  --night-2: #0b1222;
+  --ink: #f4f1e8;
+  --ink-soft: #c9c3b4;
+  --ink-faint: #8d8778;
+  --gold: #f9bc1b;
+  --gold-soft: #f9d36a;
+  --line: rgba(249, 188, 27, 0.18);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--night);
+  color: var(--ink-soft);
+  font: 400 17px/1.7 "Onest", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--gold-soft); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { color: var(--gold); }
+a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+.doc a { overflow-wrap: anywhere; } /* the partners' long privacy URLs wrap on a phone */
+
+.top {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 22px 20px 0;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ink);
+  text-decoration: none;
+  font: 600 15px/1 "Unbounded", "Onest", system-ui, sans-serif;
+  letter-spacing: 0.01em;
+}
+.brand img {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  box-shadow: 0 0 0 1px rgba(249, 188, 27, 0.45);
+}
+.brand:hover { color: var(--gold-soft); }
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 44px 20px 0;
+}
+.doc { max-width: 68ch; }
+h1 {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font: 700 clamp(30px, 5vw, 42px)/1.12 "Unbounded", "Onest", system-ui, sans-serif;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.meta { margin: 0 0 36px; font-size: 14px; color: var(--ink-faint); }
+.lede { color: var(--ink); font-size: 19px; }
+h2 {
+  margin: 44px 0 12px;
+  color: var(--ink);
+  font: 600 21px/1.3 "Onest", system-ui, sans-serif;
+  text-wrap: balance;
+}
+p { margin: 0 0 16px; text-wrap: pretty; }
+b, strong { color: var(--ink); font-weight: 600; }
+ul, ol { margin: 0 0 18px; padding-left: 22px; }
+li { margin: 0 0 10px; padding-left: 4px; }
+li::marker { color: var(--gold); }
+hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
+
+/* The one thing a reader comes for on the support page: the address. */
+.contact {
+  margin: 28px 0 8px;
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--night-2);
+}
+.contact small { display: block; font-size: 13px; color: var(--ink-faint); letter-spacing: 0.04em; }
+.contact a {
+  display: inline-block;
+  margin-top: 4px;
+  font: 600 clamp(18px, 4.6vw, 24px)/1.3 "Onest", system-ui, sans-serif;
+  color: var(--ink);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.contact a:hover { color: var(--gold-soft); }
+
+footer {
+  max-width: 760px;
+  margin: 72px auto 0;
+  padding: 28px 20px 44px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  font-size: 13px;
+  color: var(--ink-faint);
+}
+footer a { color: var(--ink-soft); text-decoration: none; }
+footer a:hover { color: var(--gold); }
+footer a[aria-current="page"] { color: var(--gold-soft); }
